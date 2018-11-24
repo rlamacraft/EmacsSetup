@@ -37,3 +37,6 @@
 
 ;;; relocate auto-saved files
 (setq backup-directory-alist '(("." . "~/.emacs_saves")))
+
+;;; enable ido-mode
+(ido-mode 1)
