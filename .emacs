@@ -3,3 +3,6 @@
 
 ;;; disabled splash screen i.e. show scratch pad on startup
 (setq inhibit-startup-screen t)
+
+;;; disable the toolbar
+(tool-bar-mode 0)
