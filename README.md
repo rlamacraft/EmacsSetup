@@ -1,0 +1,2 @@
+# EmacsSetup
+Emacs configuration
