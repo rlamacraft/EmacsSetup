@@ -41,3 +41,7 @@
 
 ;;; enable ido-mode
 (ido-mode 1)
+
+;;; enable line numbers for all buffers
+(global-linum-mode t)
+(set-face-foreground 'linum "#6F7986")
