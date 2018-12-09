@@ -8,6 +8,7 @@
 
 ;;; disable the toolbar
 (tool-bar-mode 0)
+(menu-bar-mode 0)
 
 ;;; set font
 (set-default-font "Fira Code-13")
