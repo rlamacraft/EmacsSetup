@@ -11,3 +11,5 @@
     (company-mode)
     (flycheck-mode)
     (turn-on-purescript-indentation)))
+
+(require 'idris-mode)
