@@ -13,3 +13,6 @@
     (turn-on-purescript-indentation)))
 
 (require 'idris-mode)
+
+(require 'pretty-mode)
+(global-pretty-mode t)

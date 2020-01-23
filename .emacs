@@ -26,7 +26,7 @@
 (load-file (let ((coding-system-for-read 'utf-8))
                 (shell-command-to-string "agda-mode locate")))
 
-(server-start)
+; (server-start)
 
 ;;; theme
 (custom-set-variables
@@ -37,7 +37,7 @@
  '(custom-enabled-themes (quote (tsdh-dark)))
  '(package-selected-packages
    (quote
-    (request xah-math-input smex psgml psci psc-ide markdown-mode magit idris-mode))))
+    (neotree request xah-math-input smex psgml psci psc-ide markdown-mode magit idris-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -63,3 +63,7 @@
 
 ;;; remove status bar colour
 (set-face-attribute 'mode-line nil :background "unspecified-bg")
+
+;;; neotree
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
