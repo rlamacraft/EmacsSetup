@@ -1,6 +1,9 @@
 (load "~/.emacs.d/my-loadpackages.el")
 
-(global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
+;;; rebind M-3 to #
+;;; on Mac OS, this is best achieved through rebinding the character
+;;; this may be desirable when virtualising linux on a mac, so keeping here
+;;; (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
 
 ;;; disabled splash screen i.e. show scratch pad on startup
 (setq inhibit-startup-screen t)
@@ -23,6 +26,8 @@
 (set-face-foreground 'linum "#6F7986")
 (setq linum-format "%d ")
 
+(require 'linum-relative)
+
 (load-file (let ((coding-system-for-read 'utf-8))
                 (shell-command-to-string "agda-mode locate")))
 
@@ -37,7 +42,7 @@
  '(custom-enabled-themes (quote (tsdh-dark)))
  '(package-selected-packages
    (quote
-    (neotree request xah-math-input smex psgml psci psc-ide markdown-mode magit idris-mode))))
+    (linum-relative neotree request xah-math-input smex psgml psci psc-ide markdown-mode magit idris-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
