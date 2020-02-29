@@ -109,3 +109,6 @@ there's no active region."
 
 ;;; different symbol for org-mode's collapsed headings
 (setq org-ellipsis "⤵")
+
+;;; always enable relative line numbers
+(linum-relative-toggle)
