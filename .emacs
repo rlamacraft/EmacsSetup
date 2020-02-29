@@ -8,6 +8,9 @@
 ;;; disabled splash screen i.e. show scratch pad on startup
 (setq inhibit-startup-screen t)
 
+;;; clear scratch buffer
+(setq initial-scratch-message nil)
+
 ;;; disable the toolbar
 (tool-bar-mode 0)
 (menu-bar-mode 0)
@@ -80,3 +83,26 @@
       '("~/.emacs.d/snippets"
 	))
 (yas-global-mode 1)
+
+;;; when selecting text, write over
+(delete-selection-mode t)
+
+;;; instead of asking 'yes/no?', just ask 'y/n?'
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;;; when opening from finder, keep the same window
+(setq ns-pop-up-frames nil)
+
+(defun sensible-defaults/comment-or-uncomment-region-or-line ()
+  "Comments or uncomments the region or the current line if
+there's no active region."
+  (interactive)
+  (let (beg end)
+    (if (region-active-p)
+        (setq beg (region-beginning) end (region-end))
+      (setq beg (line-beginning-position) end (line-end-position)))
+    (comment-or-uncomment-region beg end)))
+
+;;; toggle comments with M-;
+(global-set-key (kbd "M-;")
+		'sensible-defaults/comment-or-uncomment-region-or-line)
