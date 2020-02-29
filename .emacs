@@ -27,6 +27,7 @@
 (setq linum-format "%d ")
 
 (require 'linum-relative)
+(setq linum-relative-format "%3s ")
 
 (load-file (let ((coding-system-for-read 'utf-8))
                 (shell-command-to-string "agda-mode locate")))
@@ -42,7 +43,7 @@
  '(custom-enabled-themes (quote (tsdh-dark)))
  '(package-selected-packages
    (quote
-    (linum-relative neotree request xah-math-input smex psgml psci psc-ide markdown-mode magit idris-mode))))
+    (yasnippet linum-relative neotree request xah-math-input smex psgml psci psc-ide markdown-mode magit idris-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -72,3 +73,10 @@
 ;;; neotree
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
+
+;;;yasnippet
+(require 'yasnippet)
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"
+	))
+(yas-global-mode 1)

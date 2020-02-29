@@ -1,0 +1,5 @@
+# name: shebang
+# key: #!
+# --
+#!/bin/zsh
+$0
