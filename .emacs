@@ -106,3 +106,6 @@ there's no active region."
 ;;; toggle comments with M-;
 (global-set-key (kbd "M-;")
 		'sensible-defaults/comment-or-uncomment-region-or-line)
+
+;;; different symbol for org-mode's collapsed headings
+(setq org-ellipsis "⤵")
