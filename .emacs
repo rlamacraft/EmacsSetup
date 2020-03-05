@@ -46,7 +46,7 @@
  '(custom-enabled-themes (quote (tsdh-dark)))
  '(package-selected-packages
    (quote
-    (yasnippet linum-relative neotree request xah-math-input smex psgml psci psc-ide markdown-mode magit idris-mode))))
+    (haskell-mode yasnippet linum-relative neotree request xah-math-input smex psgml psci psc-ide markdown-mode magit idris-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -112,3 +112,6 @@ there's no active region."
 
 ;;; always enable relative line numbers
 (linum-relative-toggle)
+
+;;; haskell-mode
+(set-face-attribute 'haskell-constructor-face nil :foreground "#ffff00")
