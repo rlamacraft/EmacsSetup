@@ -115,3 +115,26 @@ there's no active region."
 
 ;;; haskell-mode
 (set-face-attribute 'haskell-constructor-face nil :foreground "#ffff00")
+
+;;; cleanup block python comments
+; each line is prepended with a # and then 2 spaces
+(defun clean (start end)
+  (interactive "r")
+  (setq comment (replace-regexp-in-string "\n?#\\W\\W" "" (buffer-substring-no-properties start end)))
+  (setq words (split-string comment " "))
+  (setq len (number-to-string (length words)))
+  (setq line-length 2)
+  (setq output '())
+  (while (> (length words) 0)
+    (setq word (car words))
+         (if (> (+ line-length (length word)) 80)
+	     (progn
+	       (setq output (append output (list "\n# ")))
+	       (setq line-length 2)))
+	 (setq output (append output (list word)))
+	 (setq line-length (+ 1 (+ line-length (length word))))
+	 (setq words (cdr words)))
+  (delete-region start end)
+  (insert (mapconcat (function (lambda (x) x)) (cons "# " output) " ")))
+
+
