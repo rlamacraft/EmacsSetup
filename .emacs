@@ -46,7 +46,7 @@
  '(custom-enabled-themes (quote (tsdh-dark)))
  '(package-selected-packages
    (quote
-    (haskell-mode yasnippet linum-relative neotree request xah-math-input smex psgml psci psc-ide markdown-mode magit idris-mode))))
+    (engine-mode haskell-mode yasnippet linum-relative neotree request xah-math-input smex psgml psci psc-ide markdown-mode magit idris-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -142,4 +142,9 @@ there's no active region."
   (delete-region start end)
   (insert (mapconcat (function (lambda (x) x)) (cons "# " output) " ")))
 
+;;; engine-mode
+(setq browse-url-browser-function 'browse-url-generic)
+(setq browse-url-generic-program "firefox")
 
+(defengine ddg
+  "https://duckduckgo.com/?q=%s")
