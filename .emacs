@@ -110,6 +110,11 @@ there's no active region."
 ;;; different symbol for org-mode's collapsed headings
 (setq org-ellipsis "⤵")
 
+;;; org-mode line wrap
+(add-hook 'org-mode-hook '(lambda ()
+			    (visual-line-mode)
+			    (org-indent-mode)))
+
 ;;; always enable relative line numbers
 (linum-relative-toggle)
 

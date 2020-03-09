@@ -1,0 +1,10 @@
+# name: academic-paper-notes
+# key: paper
+# --
+** $1
+  :PROPERTIES:
+  :Author: $2
+  :Line: $3
+  :END:
+*** Notes
+   - $4
