@@ -37,16 +37,17 @@
 
 ; (server-start)
 
-;;; theme
+;;; customized
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (tsdh-dark)))
+ '(org-sticky-header-full-path (quote full))
  '(package-selected-packages
    (quote
-    (engine-mode haskell-mode yasnippet linum-relative neotree request xah-math-input smex psgml psci psc-ide markdown-mode magit idris-mode))))
+    (org-sticky-header engine-mode haskell-mode yasnippet linum-relative neotree request xah-math-input smex psgml psci psc-ide markdown-mode magit idris-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -110,10 +111,14 @@ there's no active region."
 ;;; different symbol for org-mode's collapsed headings
 (setq org-ellipsis "⤵")
 
-;;; org-mode line wrap
+;;; org-mode 
 (add-hook 'org-mode-hook '(lambda ()
+			    ;;; line wrap
 			    (visual-line-mode)
-			    (org-indent-mode)))
+			    (org-indent-mode)
+	                    ;;; sticky header
+	                    (org-sticky-header-mode)
+	  ))
 
 ;;; always enable relative line numbers
 (linum-relative-toggle)
