@@ -155,4 +155,5 @@ there's no active region."
   "https://duckduckgo.com/?q=%s")
 
 ;;; selection region style
-(set-face-attribute 'region nil :background nil :foreground "red")
+(set-face-attribute 'region nil :background "#000")
+(set-face-attribute 'region nil :foreground "#fff")
