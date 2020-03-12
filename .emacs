@@ -153,3 +153,6 @@ there's no active region."
 
 (defengine ddg
   "https://duckduckgo.com/?q=%s")
+
+;;; selection region style
+(set-face-attribute 'region nil :background nil :foreground "red")")
