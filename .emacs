@@ -60,7 +60,17 @@
  '(agda2-highlight-symbol-face ((t (:foreground "brightblack"))))
  '(font-lock-builtin-face ((t (:foreground "brightcyan"))))
  '(font-lock-comment-face ((t (:foreground "color-246"))))
- '(font-lock-function-name-face ((t (:foreground "brightblue")))))
+ '(font-lock-function-name-face ((t (:foreground "brightblue"))))
+ '(header-line ((t (:background "unspecified-by" :foreground "SeaGreen3"))))
+ '(org-hide ((t (:foreground "unspecified-by"))))
+ '(outline-1 ((t (:foreground "color-252" :weight normal))))
+ '(outline-2 ((t (:foreground "color-252" :weight normal))))
+ '(outline-3 ((t (:foreground "color-252" :weight normal))))
+ '(outline-4 ((t (:foreground "color-252" :weight normal))))
+ '(outline-5 ((t (:foreground "color-252" :weight normal))))
+ '(outline-6 ((t (:foreground "color-252" :weight normal))))
+ '(outline-7 ((t (:foreground "color-252" :weight normal))))
+ '(outline-8 ((t (:foreground "color-252" :weight normal)))))
 
 ;;; remove background colour
 (defun set-background-for-terminal (&optional frame)
@@ -160,3 +170,8 @@ there's no active region."
 
 (fset 'today
    "\C-u\C-[!date +\"%Y-%m-%d\"\C-m\C-[OB\C-?")
+
+(setq org-sticky-header-heading-star "")
+(setq org-sticky-header-prefix nil)
+(setq org-sticky-header-outline-path-separator " > ")
+
