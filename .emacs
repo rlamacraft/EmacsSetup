@@ -157,3 +157,6 @@ there's no active region."
 ;;; selection region style
 (set-face-attribute 'region nil :background "#000")
 (set-face-attribute 'region nil :foreground "#fff")
+
+(fset 'today
+   "\C-u\C-[!date +\"%Y-%m-%d\"\C-m\C-[OB\C-?")
