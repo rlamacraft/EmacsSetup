@@ -1,0 +1,10 @@
+# name: blog-post-notes
+# key: blog
+# --
+** $1
+  :PROPERTIES:
+  :Date-Accessed: $2
+  :Link: $3
+  :END:
+*** Notes
+   - $4
