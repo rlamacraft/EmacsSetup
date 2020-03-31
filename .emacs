@@ -61,7 +61,7 @@
  '(font-lock-builtin-face ((t (:foreground "brightcyan"))))
  '(font-lock-comment-face ((t (:foreground "color-246"))))
  '(font-lock-function-name-face ((t (:foreground "brightblue"))))
- '(header-line ((t (:background "unspecified-by" :foreground "SeaGreen3"))))
+ '(header-line ((t (:background "unspecified-by" :foreground "color-252"))))
  '(org-hide ((t (:foreground "unspecified-by"))))
  '(outline-1 ((t (:foreground "color-252" :weight normal))))
  '(outline-2 ((t (:foreground "color-252" :weight normal))))
@@ -168,10 +168,11 @@ there's no active region."
 (set-face-attribute 'region nil :background "#000")
 (set-face-attribute 'region nil :foreground "#fff")
 
+;;; functon for inserting the current date
 (fset 'today
    "\C-u\C-[!date +\"%Y-%m-%d\"\C-m\C-[OB\C-?")
 
+;;; org-sticky-mode customisation
 (setq org-sticky-header-heading-star "")
 (setq org-sticky-header-prefix nil)
 (setq org-sticky-header-outline-path-separator " > ")
-
