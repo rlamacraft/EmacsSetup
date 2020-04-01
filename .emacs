@@ -118,9 +118,6 @@ there's no active region."
 (global-set-key (kbd "M-;")
 		'sensible-defaults/comment-or-uncomment-region-or-line)
 
-;;; different symbol for org-mode's collapsed headings
-(setq org-ellipsis "⤵")
-
 ;;; org-mode 
 (add-hook 'org-mode-hook '(lambda ()
 			    ;;; line wrap
@@ -128,7 +125,11 @@ there's no active region."
 			    (org-indent-mode)
 	                    ;;; sticky header
 	                    (org-sticky-header-mode)
-	  ))
+			    ))
+
+;;; org-mode collapsing
+(setq org-ellipsis "⤵")
+(setq org-cycle-separator-lines -1)
 
 ;;; always enable relative line numbers
 (linum-relative-toggle)
