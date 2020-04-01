@@ -176,3 +176,6 @@ there's no active region."
 (setq org-sticky-header-heading-star "")
 (setq org-sticky-header-prefix nil)
 (setq org-sticky-header-outline-path-separator " > ")
+
+;;; org-mode key bindings
+(global-set-key (kbd "C-c l") 'org-store-link)
