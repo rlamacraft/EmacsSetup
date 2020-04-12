@@ -63,6 +63,7 @@
  '(font-lock-function-name-face ((t (:foreground "brightblue"))))
  '(header-line ((t (:background "unspecified-by" :foreground "color-252"))))
  '(org-hide ((t (:foreground "unspecified-by"))))
+ '(org-target ((t (:foreground "magenta" :underline t))))
  '(outline-1 ((t (:foreground "color-252" :weight normal))))
  '(outline-2 ((t (:foreground "color-252" :weight normal))))
  '(outline-3 ((t (:foreground "color-252" :weight normal))))
@@ -124,7 +125,7 @@ there's no active region."
 			    (visual-line-mode)
 			    (org-indent-mode)
 	                    ;;; sticky header
-	                    (org-sticky-header-mode)
+;	                    (org-sticky-header-mode)
 			    ))
 
 ;;; org-mode collapsing
@@ -180,3 +181,29 @@ there's no active region."
 
 ;;; org-mode key bindings
 (global-set-key (kbd "C-c l") 'org-store-link)
+
+
+;;; org-mode: hide angle brackets in "<<target>>" notation
+;;; source: https://emacs.stackexchange.com/questions/19230/how-to-hide-targets
+(defcustom org-hidden-links-additional-re "\\(<<\\)[[:print:]]+\\(>>\\)"
+  "Regular expression that matches strings where the invisible-property is set to org-link."
+  :type '(choice (const :tag "Off" nil) regexp)
+  :group 'org-link)
+(make-variable-buffer-local 'org-hidden-links-additional-re)
+
+(defun org-activate-hidden-links-additional (limit)
+  "Put invisible-property org-link on strings matching"
+  (if org-hidden-links-additional-re
+      (re-search-forward org-hidden-links-additional-re limit t)
+    (goto-char limit)
+    nil))
+
+(defun org-hidden-links-hook-function ()
+  "Add rule for `org-activate-hidden-links-additional' to `org-font-lock-extra-keywords'.
+You can include this function in `org-font-lock-set-keywords-hook'."
+  (add-to-list 'org-font-lock-extra-keywords
+                              '(org-activate-hidden-links-additional
+                                (1 '(face org-target invisible org-link))
+                (2 '(face org-target invisible org-link)))))
+
+(add-hook 'org-font-lock-set-keywords-hook #'org-hidden-links-hook-function)
