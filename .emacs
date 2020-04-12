@@ -207,3 +207,6 @@ You can include this function in `org-font-lock-set-keywords-hook'."
                 (2 '(face org-target invisible org-link)))))
 
 (add-hook 'org-font-lock-set-keywords-hook #'org-hidden-links-hook-function)
+
+;; Insert Heading After Current key binding
+(global-set-key (kbd "C-c M-RET") 'org-insert-heading-after-current)
