@@ -210,3 +210,7 @@ You can include this function in `org-font-lock-set-keywords-hook'."
 
 ;; Insert Heading After Current key binding
 (global-set-key (kbd "C-c M-RET") 'org-insert-heading-after-current)
+
+;; org-mode indentation styling
+(setq org-indent-indentation-per-level 1)
+(setq org-hide-leading-stars nil)
