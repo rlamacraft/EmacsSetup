@@ -1,7 +1,8 @@
 # name: org-header
 # key: head
 # --
-#+AUTHOR: R. Lamacraft
+#+TITLE: $1
+#+AUTHOR: Robert Lamacraft
 #+EMAIL: hello@rlamacraft.uk
-#+STARTUP: hidestars
-$0
+
+$2
