@@ -126,6 +126,8 @@ there's no active region."
 			    (org-indent-mode)
 	                    ;;; sticky header
 ;	                    (org-sticky-header-mode)
+			    ;;; disable linum mode
+			    (linum-mode -1)
 			    ))
 
 ;;; org-mode collapsing
