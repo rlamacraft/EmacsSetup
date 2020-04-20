@@ -11,6 +11,9 @@
 ;;; clear scratch buffer
 (setq initial-scratch-message nil)
 
+;;; disable annoying bell
+(setq ring-bell-function #'ignore)
+
 ;;; disable the toolbar
 (tool-bar-mode 0)
 (menu-bar-mode 0)
